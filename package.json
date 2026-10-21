@@ -16,7 +16,7 @@
   "devDependencies": {
     "canvas-confetti": "^1.9.4",
     "prettier": "3.9.8",
-    "sass-embedded": "^1.105.1",
+    "sass-embedded": "^1.106.0",
     "typescript": "^7.0.2",
     "vitepress": "^1.6.4"
   },
