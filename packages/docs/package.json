@@ -1,0 +1,19 @@
+{
+  "name": "@aivst/vpdocs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Documentation site for vp VitePress Theme",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm -C ../theme build && vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@aivst/vptheme": "workspace:*",
+    "vitepress": "^1.6.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

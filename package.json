@@ -1,26 +1,27 @@
 {
-  "name": "hefung",
-  "version": "3.2.1",
-  "description": "记录 & 分享个人技术知识内容",
+  "name": "aivst",
+  "version": "1.0.0",
+  "private": true,
   "type": "module",
+  "packageManager": "pnpm@10.31.0",
+  "description": "VitePress theme monorepo",
   "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview ",
-    "serve": "vitepress serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hefung/hefung.github.io.git"
+    "dev": "pnpm -C packages/docs dev",
+    "build": "pnpm -r build",
+    "build:theme": "pnpm -C packages/theme build",
+    "build:docs": "pnpm -C packages/docs build",
+    "preview": "pnpm -C packages/docs preview",
+    "release": "pnpm -C packages/theme release"
   },
   "devDependencies": {
-    "canvas-confetti": "^1.9.4",
-    "prettier": "3.9.8",
-    "sass-embedded": "^1.104.1",
-    "typescript": "^7.0.2",
-    "vitepress": "^1.6.4"
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
   },
-  "engines": {
-    "node": ">=20"
-  }
+  "keywords": [
+    "vitepress",
+    "theme",
+    "documentation"
+  ],
+  "author": "aivst",
+  "license": "MIT"
 }
