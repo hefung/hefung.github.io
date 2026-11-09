@@ -227,7 +227,7 @@ th {
     cursor: not-allowed;
 }
 
-/* 暗色模式兼容 AIVST */
+/* 暗色模式兼容  */
 :deep(.dark) th {
     background-color: #334155;
 }

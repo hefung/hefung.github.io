@@ -4,49 +4,20 @@ import PageHero from '../common/PageHero.vue'
 import { useLocale } from '../../composables/useLocale'
 import { useIcon } from '../../composables/useIcon'
 import { useLink } from '../../composables/useLink'
-import { ref, computed, onMounted } from 'vue'
-
-// 配置
-const API_URL = 'https://down.mxw.xx.kg/https://raw.githubusercontent.com/hefung/hefung/refs/heads/main/sponsors-random.json'
-
-// 类型定义
-interface SponsorItem {
-  name: string
-  amount: number
-  message: string
-  date: string
-}
-
-// 状态
-const rawsponsors = ref<SponsorItem[]>([])
-const loading = ref(false)
-const errorMsg = ref('')
+import { ref, computed } from 'vue'
+import { useSponsors } from '../../composables/sponsors'
 
 const { frontmatter } = useData()
 const { isEmoji, isImageUrl } = useIcon()
 const { resolveAsset } = useLink()
-
-// 多语言
 const locale = useLocale('sponsor')
-
-// 支付方式切换
 const activeMethod = ref<string>('wechat')
 
-// 直接用接口数据，去掉冗余map
-const sponsors = computed<SponsorItem[]>(() => rawsponsors.value)
+// 直接调用hook，自动触发远程请求
+const { sponsors, stats, loading, errorMsg } = useSponsors()
 
-// 统计信息
-const stats = computed(() => {
-  const list = sponsors.value
-  const totalAmount = list.reduce((sum, sponsor) => sum + (Number(sponsor.amount) || 0), 0)
-  const totalSponsors = list.length
-  return { totalAmount, totalSponsors }
-})
-
-// 支付配置
 const paymentMethods = computed(() => frontmatter.value.paymentMethods || {})
 
-// 按钮样式映射
 const getActiveButtonClass = (color: string) => {
   const colorMap: Record<string, string> = {
     green: 'bg-green-500 text-white shadow-lg',
@@ -59,7 +30,6 @@ const getActiveButtonClass = (color: string) => {
   return colorMap[color] || 'bg-primary-500 text-white shadow-lg'
 }
 
-// 图标类型判断
 const getIconType = (icon: string | undefined): 'class' | 'emoji' | 'image' | 'svg' => {
   if (!icon) return 'class'
   if (isImageUrl(icon)) return 'image'
@@ -68,27 +38,8 @@ const getIconType = (icon: string | undefined): 'class' | 'emoji' | 'image' | 's
   return 'class'
 }
 
-// 取头像首字符（安全兜底，防止name为空报错）
+// 头像安全兜底
 const getAvatarChar = (name: string) => name?.trim()?.charAt(0) || '友'
-
-// 加载数据
-async function fetchData() {
-  loading.value = true
-  errorMsg.value = ''
-  try {
-    const res = await fetch(API_URL, { cache: 'default' })
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    const data = await res.json()
-    rawsponsors.value = Array.isArray(data) ? data : []
-  } catch (err: any) {
-    errorMsg.value = err.message || '加载失败，请稍后刷新重试'
-    rawsponsors.value = []
-  } finally {
-    loading.value = false
-  }
-}
-
-onMounted(fetchData)
 </script>
 
 <template>
@@ -176,7 +127,7 @@ onMounted(fetchData)
             </div>
           </div>
 
-          <!-- 右侧：支持者列表（补了loading/error/空状态） -->
+          <!-- 右侧：支持者列表 -->
           <div class="sponsor-sidebar">
             <div class="sponsor-sidebar-card">
               <h3 class="sponsor-sidebar-title">
@@ -185,19 +136,15 @@ onMounted(fetchData)
               </h3>
 
               <div class="sponsor-list">
-                <!-- 加载中 -->
                 <div v-if="loading" class="sponsor-list-item text-center text-gray-400">
                   支持者数据加载中...
                 </div>
-                <!-- 加载失败 -->
                 <div v-else-if="errorMsg" class="sponsor-list-item text-center text-red-400 text-sm">
                   {{ errorMsg }}
                 </div>
-                <!-- 空列表 -->
                 <div v-else-if="sponsors.length === 0" class="sponsor-list-item text-center text-gray-400">
                   暂无赞助记录
                 </div>
-                <!-- 正常列表 -->
                 <template v-else>
                   <div
                     v-for="(sponsor, index) in sponsors"
