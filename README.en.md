@@ -1,16 +1,16 @@
-<h1 align="center">Dux VitePress Theme</h1>
+<h1 align="center">HeFung</h1>
 
 <p align="center">
-  <strong>🎨 A modern, elegant, and customizable VitePress documentation theme</strong>
+  <strong>🛠️ Personal Open-Source Tech Site</strong>
 </p>
 
 <p align="center">
-  Build beautiful, multilingual, component-rich documentation sites with ease.
+  Curated practical tools, GitHub mirror acceleration, system resources and dev notes.
 </p>
 
 <p align="center">
-  <a href="https://aivst.github.io/" target="_blank">📖 Documentation</a> ·
-  <a href="https://github.com/aivst/" target="_blank">🏠 GitHub</a> · 
+  <a href="https://hefung.github.io/" target="_blank">🌐 Visit Site</a> ·
+  <a href="https://github.com/hefung" target="_blank">🏠 GitHub</a>
 </p>
 
 <p align="center">
@@ -19,159 +19,47 @@
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/badge/License-MIT-green.svg" />
-  <img alt="VitePress" src="https://img.shields.io/badge/vp1.x-3b82f6" />
-  <img alt="Node" src="https://img.shields.io/badge/Node-18%2B-333" />
-  <img alt="PNPM" src="https://img.shields.io/badge/PNPM-9-ffa500" />
-  <img alt="Stars" src="https://img.shields.io/github/stars/aivst/vptheme?style=social" />
+  <img alt="Stars" src="https://img.shields.io/github/stars/hefung?style=social" />
 </p>
 
 ---
 
+## 🧭 About This Site
+
+HeFung is a minimal personal tech site built with VitePress.
+It focuses on practical utilities, mirror lists, system resources and casual dev notes — no bloat, no ads, just useful stuff that saves real time.
+
+> Mission: share scripts, mirror endpoints and curated resources I use daily, free and open for everyone.
+
+## 📂 Site Content
+
+| Category              | Description                                                        |
+| --------------------- | ------------------------------------------------------------------ |
+| ⚡ GitHub Mirror List | Real-time tested mirror endpoints, one-click copy                  |
+| 🪟 System Utilities   | Windows / Office activation scripts, handy deployment tools        |
+| 🖼️ Curated Resources  | HD wallpapers, developer navigation sites, useful tool collections |
+| 📝 Dev Notes          | Daily fix logs, small project writeups, open-source practice notes |
+| ☕ Sponsor            | If this site saved you time, voluntary donations are welcome       |
+
 ## ✨ Highlights
 
-- 🚀 **Ready to use**: one-command install, zero-config quick start
-- 🎨 **Modern design**: elegant UI with light/dark modes
-- 🌍 **Internationalization**: full i18n support and jump page
-- 📚 **Multiple layouts**: Home / Doc / Page / Sponsor / Changelog / Jump
-- 🔍 **Local search**: built-in search with graceful fallback
-- 🧩 **Rich components**: custom containers, code groups, badges, Mermaid, etc.
-- ⚡ **High performance**: powered by VitePress 1.x
+- 🪶 **Minimal & Clean**: No intrusive popups, no ads, focused reading experience
+- ⚡ **Fast Loading**: Lightweight architecture, fully responsive on all devices
+- 📦 **Ready to Use**: Every script, endpoint and tool works out of the box
+- 🔄 **Ongoing Updates**: New tools and mirrors added periodically
+- 🤝 **Free Forever**: All content is open, donations never lock any features
 
----
+## 🚀 Quick Links
 
-## 🧱 Monorepo Structure
+- GitHub Profile: https://github.com/hefung
+- Live Site: https://hefung.github.io/
 
-```
-vpmonorepo/
-├─ packages/
-│  ├─ theme/     # Theme source (published package)
-│  └─ docs/      # Documentation site (demo & docs)
-├─ .github/workflows/deploy-docs.yml  # GitHub Pages deployment
-└─ README.md / README.en.md
-```
+## 🤝 Feedback
 
-> Docs deploy to `https://aivst.github.io/` by default.
+If any resource or mirror stops working:
 
----
-
-## 🚀 Get Started (Use in your project)
-
-### 1. Install
-
-```bash
-pnpm add @aivst/vptheme
-# or
-npm i @aivst/vptheme
-```
-
-### 2. Enable the theme
-
-```ts
-// .vitepress/theme/index.ts
-import theme from "@aivst/vptheme";
-import "@aivst/vptheme/dist/index.css";
-
-export default {
-  extends: theme,
-};
-```
-
-### 3. Minimal config (recommended)
-
-Automatically injects `vite.ssr.noExternal`, `optimizeDeps.exclude`, and enables Mermaid runtime rendering (powered by `vpmermaid-renderer`, GPL-3.0-only).
-
-```ts
-// .vitepress/config.mts
-import { withDuxTheme } from "@aivst/vptheme/config";
-
-export default withDuxTheme({
-  // your config...
-});
-```
-
-### 4. Homepage example
-
-```md
----
-layout: home
-hero:
-  name: My Project
-  text: Modern VitePress Theme
-  actions:
-    - theme: brand
-      text: Get Started
-      link: /guide/
-features:
-  - icon: ⚡
-    title: Fast
-    details: Built on VitePress
----
-```
-
----
-
-## 🧭 Working with Docs (this repo)
-
-```bash
-# Develop docs site
-pnpm dev
-
-# Build all packages (theme and docs)
-pnpm build
-
-# Build docs only
-pnpm build:docs
-
-# Preview docs
-pnpm preview
-```
-
-> The docs build auto-sets `base` by environment:
->
-> - Local: `/`
-> - GitHub Pages: `/vptheme/`
-
----
-
-## 🧩 Layouts & Features
-
-| Layout      | Use Case      | Notes                                   |
-| ----------- | ------------- | --------------------------------------- |
-| `home`      | Homepage      | Hero / Features / QuickStart            |
-| `doc`       | Docs          | Sidebar / TOC / Doc footer              |
-| `page`      | Single page   | Centered content + PageHero             |
-| `sponsor`   | Sponsor       | Payment methods / supporters / stats    |
-| `changelog` | Releases      | Version history / categories            |
-| `jump`      | Language jump | Detect & redirect to preferred language |
-
-See the online docs for more examples and API.
-
----
-
-## 🌐 Deploy to GitHub Pages
-
-This repo ships with `.github/workflows/deploy-docs.yml`.
-
-- Triggers: push to `main` or manual run
-- Artifact: `packages/docs/.vitepress/dist`
-- URL: `https://aivst.github.io/`
-
-If deploying in your own repo, make sure:
-
-- VitePress `base` matches your repo name (e.g., `/vptheme/`)
-- Actions has Pages permissions and uploads the dist
-
----
-
-## 🤝 Contributing
-
-Issues and PRs are welcome:
-
-1. Fork the repo
-2. Create a branch: `feat/your-feature`
-3. Commit and open a PR
-
----
+1. Open an Issue on this repo
+2. Mirrors are re-tested and updated on a regular schedule
 
 ## 📄 License
 
@@ -180,5 +68,5 @@ Issues and PRs are welcome:
 ---
 
 <p align="center">
-  Made with ❤️ by <a href="https:/aivst.github.io" target="_blank">aivst</a>
+  Made with ❤️ by <a href="https://github.com/hefung" target="_blank">HeFung Personal Site</a>
 </p>

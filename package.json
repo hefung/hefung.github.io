@@ -1,10 +1,10 @@
 {
-  "name": "aivst",
+  "name": "hefung",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.31.0",
-  "description": "VitePress theme monorepo",
+  "description": "HeFung personal tech site, built with VitePress",
   "scripts": {
     "dev": "pnpm -C packages/docs dev",
     "build": "pnpm -r build",
@@ -19,9 +19,11 @@
   },
   "keywords": [
     "vitepress",
-    "theme",
-    "documentation"
+    "personal-site",
+    "mirror-list",
+    "open-source",
+    "utility-tools"
   ],
-  "author": "aivst",
+  "author": "hefung",
   "license": "MIT"
 }
