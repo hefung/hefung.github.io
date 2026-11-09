@@ -1,19 +1,19 @@
 ---
 layout: home
 title: HeFung
-titleTemplate: Personal Tech Site · Useful Tools, Mirrors & Dev Notes
+titleTemplate: Focus · Insight · Share
 hero:
   name: HeFung
-  text: Personal Open-Source Tech Site
-  tagline: Curated tools, mirror acceleration, practical scripts and dev notes — a clean, lightweight resource hub
-  subtitle: 🌱 Personal Open-Source Project
+  text: Focus · Insight · Share
+  tagline: ✨ Notes and sharing of personal tech learnings
+  subtitle: 🎉 Personal Open Source Site
   mockUrl: "hefung.github.io"
   image:
     src: /hero.png
-    alt: Hero Image
+    alt: HeFung
   actions:
     - theme: brand
-      text: Explore Resources
+      text: Browse Resources
       link: /en-US/intro
     - theme: alt
       text: View on GitHub
@@ -23,74 +23,85 @@ hero:
       text: Mirror List
       link: /en-US/mirror
 features:
-  - icon: cube
+  - icon: rocket-launch
     color: blue
-    title: Useful Toolkit
-    details: Curated collection of practical scripts, system utilities and open-source tools for daily use
+    title: Bing Wallpapers
+    details: Auto-fetch high-quality Bing daily wallpapers
+    link: https://hefung.github.io/bing/
+    linkText: Visit
 
-  - icon: shield-check
-    color: green
-    title: Mirror Acceleration
-    details: Regularly tested GitHub mirror endpoints to speed up slow or blocked downloads
-
-  - icon: notebook
+  - icon: paint-brush
     color: purple
-    title: Tech Notes
-    details: Concise practical tutorials and dev notes accumulated from daily work and exploration
+    title: Dev Navigation
+    details: Curated list of useful sites and developer communities
+    link: https://hefung.github.io/nav/
+    linkText: Visit
+
+  - icon: arrow-down-tray
+    color: green
+    title: Windows Downloads
+    details: Official Microsoft software download resources
+    link: https://hefung.github.io/msdl/
+    linkText: Visit
+
+  - icon: globe-alt
+    color: orange
+    title: Classic Chinese Books
+    details: Timeless traditional Chinese classic texts collection
+    link: https://hefung.github.io/xuanxue/
+    linkText: Visit
 
   - icon: device-phone-mobile
-    color: orange
-    title: Fully Responsive
-    details: Clean adaptive layout that works smoothly on desktop, tablet and mobile screens
-
-  - icon: bolt
     color: amber
-    title: Fast & Lightweight
-    details: Built on VitePress, fast page loads, simple structure, no clutter
+    title: Poetry Name Generator
+    details: Baby names inspired by classic Chinese poetry (Shijing, Chu Ci, Tang & Song verse)
+    link: https://hefung.github.io/qiming/
+    linkText: Visit
 
-  - icon: heart
+  - icon: magnifying-glass
     color: indigo
-    title: Free & Open
-    details: All resources are publicly shared and free to use, maintained in spare time
+    title: MS Activation Scripts
+    details: Open source Windows/Office activator supporting HWID, Ohook, TSforge and KMS methods, with built-in troubleshooting.
+    link: https://hefung.github.io/mas/
+    linkText: Visit
 
 featuresConfig:
-  title: Why HeFung?
-  description: A minimalist personal resource hub for practical tools, mirror links and technical notes
+  title: My Projects
+  description: Small tools and resources I built and maintain in my spare time
   extraSection:
-    title: What You'll Find
-    description: Curated, tested and updated resources for developers and power users
+    title: Try Them Out
+    description: All projects are open source and free to use. If they help you out, consider buying me a coffee.
     tags:
-      - Useful Tools
-      - GitHub Mirrors
-      - Script Collection
-      - Clean Design
-      - Bilingual Support
-      - Mobile Friendly
+      - Tool Collection
+      - Curated Resources
+      - Personal Projects
+      - Open Source
+      - Regular Updates
 quickStart:
-  badge: Browse in Seconds
-  title: Start Exploring
-  subtitle: Dive into the resource collection
-  description: Jump right in and find the tools, mirrors or notes you need
+  badge: Quick Start
+  title: About This Site
+  subtitle: Sharing practical tools and resources
+  description: This site collects my daily-use utilities, curated resources and small fun projects — all open source and free to use.
   steps:
     - step: "01"
-      icon: globe-alt
+      icon: rocket-launch
       color: "blue"
-      title: "Browse the Mirror List"
-      description: Pick the fastest working mirror for your downloads
-      code: "# See the mirror acceleration page"
+      title: "Browse Tools"
+      description: Click the cards above to visit each tool
+      code: "Click 'Visit' on any card"
     - step: "02"
-      icon: wrench
+      icon: paint-brush
       color: "green"
-      title: "Check the Tool Collection"
-      description: Find practical scripts and utilities for system and dev work
-      code: "# Useful scripts & open-source tools"
+      title: "Bookmark & Use"
+      description: Save the pages you like for easy access later
+      code: "Press Ctrl+D to bookmark"
     - step: "03"
-      icon: notebook
+      icon: globe-alt
       color: "purple"
-      title: "Read Dev Notes"
-      description: Practical tutorials and tips accumulated from real work
-      code: "# Tech notes & how-tos"
-  helpText: "Want to know more?"
-  helpLink: "/en-US/intro"
-  helpLinkText: "About This Site"
+      title: "Support Me"
+      description: If these tools save you time, feel free to sponsor
+      code: "Click ☕ Sponsor in top nav"
+  helpText: "Feedback or suggestions"
+  helpLink: /en-US/sponsor
+  helpLinkText: "Visit Sponsor Page"
 ---
